@@ -86,8 +86,9 @@ sudo ip link set kubernetes up
 ### Install the Docker Engine
 
 ```
-sudo apt-get update
-sudo apt-get install docker.io
+wget https://get.docker.com/builds/Linux/x86_64/docker-1.9.1
+chmod +x docker-1.9.1
+sudo mv docker-1.9.1 /usr/bin/docker
 ```
 
 ### Create the docker systemd unit file
