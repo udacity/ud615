@@ -27,12 +27,6 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-Review the unit file:
-
-```
-cat kube-apiserver.service
-```
-
 Start the kube-apiserver service:
 
 ```
@@ -49,4 +43,6 @@ sudo systemctl start kube-apiserver
 
 ```
 sudo systemctl status kube-apiserver
+kubectl version
+kubectl get cs
 ```
