@@ -1,4 +1,6 @@
-# Install and configure the Kubernetes API Server
+# Install and configure etcd
+
+Kubernetes cluster state is stored in etcd.
 
 ## node0
 
@@ -30,12 +32,6 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-```
-
-Review the unit file:
-
-```
-cat etcd.service
 ```
 
 Start the etcd service:
