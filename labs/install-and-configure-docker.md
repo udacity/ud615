@@ -10,6 +10,8 @@ gcloud compute ssh node0
 
 ### Create the Kubernetes Docker Bridge
 
+By default Docker handles container networking for a Kubernetes cluster. Docker requires at least one bridge to be setup before running any containers. Each Docker host must have an unique bridge IP address to avoid allocating duplicate IP addresses to containers across hosts.
+
 ```
 sudo ip link add name kubernetes type bridge
 sudo ip addr add 10.200.0.1/24 dev kubernetes
@@ -19,8 +21,9 @@ sudo ip link set kubernetes up
 ### Install the Docker Engine
 
 ```
-sudo apt-get update
-sudo apt-get install docker.io
+wget https://get.docker.com/builds/Linux/x86_64/docker-1.9.1
+chmod +x docker-1.9.1
+sudo mv docker-1.9.1 /usr/bin/docker
 ```
 
 ### Create the docker systemd unit file:
