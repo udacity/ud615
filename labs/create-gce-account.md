@@ -12,7 +12,7 @@ A GCP project is required for this course. You can use an existing GCP project o
 
 ## Enable Compute Engine and Container Engine APIs
 
-In order to create the cloud resources required by this workshop, you will need to enable the following APIs using the [Google API Console ](https://developers.googleblog.com/2016/03/introducing-google-api-console.html):
+In order to create the cloud resources required by this workshop, you will need to enable the following APIs using the [Google API Console](https://developers.googleblog.com/2016/03/introducing-google-api-console.html):
 
 * Compute Engine API
 * Container Engine API
