@@ -8,7 +8,7 @@ gcloud compute ssh node1
 
 ### Download Kubernetes release tar
 
-See the [Download a Kubernetes release](labs/download-a-kubernetes-release.md) lab.
+See the [Download a Kubernetes release](download-a-kubernetes-release.md) lab.
 
 ### Create the kubelet systemd unit file:
 
