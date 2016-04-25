@@ -1,4 +1,4 @@
-# Install and configure the Kubernetes API Server
+# Install and configure the Kubernetes Scheduler
 
 ## node0
 
