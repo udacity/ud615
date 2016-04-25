@@ -42,14 +42,6 @@ Kubernetes can be broken up into two parts: the controller and worker nodes. The
   * [Install and configure the Controller Manager](labs/install-and-configure-controller-manager.md)
   * [Install and configure the Scheduler](labs/install-and-configure-scheduler.md)
 
-### Provision the Kubernetes clients
-
-Kubernetes requires a client to manipulate cluster state and inspect the system. kubectl is the official Kubernetes CLI client and will be installed in this section.
-
-#### Labs
-
-  * [Install and configure the kubectl CLI](labs/install-and-configure-kubectl.md)
-
 ### Provision the Worker Nodes
 
 Kubernetes worker nodes are responsible for running containers (inside of pods), service loadbalancing, and reporting status information and metrics for nodes and pods. In this section you will setup the Kubernetes worker nodes and install the following components:
