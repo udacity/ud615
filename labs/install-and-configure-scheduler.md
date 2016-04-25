@@ -24,12 +24,6 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-Review the unit file:
-
-```
-cat kube-scheduler.service
-```
-
 Start the kube-scheduler service:
 
 ```
@@ -46,8 +40,5 @@ sudo systemctl start kube-scheduler
 
 ```
 sudo systemctl status kube-scheduler
-```
-
-```
-hyperkube kubectl get cs
+kubectl get cs
 ```
