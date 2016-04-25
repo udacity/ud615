@@ -26,7 +26,7 @@ sudo apt-get install docker.io
 ### Create the docker systemd unit file:
 
 ```
-Unit]
+[Unit]
 Description=Docker Application Container Engine
 Documentation=http://docs.docker.io
 
@@ -89,7 +89,7 @@ sudo apt-get install docker.io
 ### Create the docker systemd unit file
 
 ```
-Unit]
+[Unit]
 Description=Docker Application Container Engine
 Documentation=http://docs.docker.io
 
