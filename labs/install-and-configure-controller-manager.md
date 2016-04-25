@@ -1,4 +1,4 @@
-# Install and configure the Kubernetes API Server
+# Install and configure the Kubernetes Controller Manager
 
 ## node0
 
@@ -24,12 +24,6 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-Review the unit file:
-
-```
-cat kube-controller-manager.service
-```
-
 Start the kube-controller-manager service:
 
 ```
@@ -46,8 +40,5 @@ sudo systemctl start kube-controller-manager
 
 ```
 sudo systemctl status kube-controller-manager
-```
-
-```
-hyperkube kubectl get cs
+kubectl get cs
 ```
