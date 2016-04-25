@@ -14,7 +14,7 @@ In this section you will create a Google Compute Engine (GCE) account. GCE will 
 
 
   * [Create a GCE Account](labs/create-gce-account.md)
-  * [Enable and explore Cloud Shell](labs/cloud-shell.md)
+  * [Enable and explore Cloud Shell](labs/enable-and-explore-cloud-shell.md)
 
 ## Provision a Kubernetes cluster from scratch
 
