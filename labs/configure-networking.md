@@ -41,7 +41,7 @@ gcloud compute ssh node0
 ```
 
 ```
-sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4 -j MASQUERADE
 ```
 
 ### node1
@@ -51,7 +51,7 @@ gcloud compute ssh node1
 ```
 
 ```
-sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4 -j MASQUERADE
 ```
 
 ## Validating Cross Host Container Networking
