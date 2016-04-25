@@ -65,6 +65,7 @@ sudo systemctl start docker
 #### Verify
 
 ```
+sudo systemctl status docker
 sudo docker version
 ```
 
@@ -128,5 +129,6 @@ sudo systemctl start docker
 #### Verify
 
 ```
+sudo systemctl status docker
 sudo docker version
 ```
