@@ -47,12 +47,10 @@ Kubernetes can be broken up into two parts: the controller and worker nodes. The
 Kubernetes worker nodes are responsible for running containers (inside of pods), service loadbalancing, and reporting status information and metrics for nodes and pods. In this section you will setup the Kubernetes worker nodes and install the following components:
 
 * kubelet
-* kube-proxy
 
 #### Labs
 
   * [Install and configure the kubelet](labs/install-and-configure-kubelet.md)
-  * [Install and configure the kube-proxy](labs/install-and-configure-kube-proxy.md)
 
 ## Provision Kubernetes using GKE
 
