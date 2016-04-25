@@ -2,37 +2,47 @@
 
 In this lab you will install and configure Docker on node0 and node1. Docker is will run containers created by Kubernetes and provide the API required to inspect them.
 
-```
-https://docs.docker.com/engine/installation/linux/ubuntulinux/
-```
-
-## Configure the Docker Engine
-
 ### node0
 
 ```
 gcloud compute ssh node0
 ```
 
-### Update your apt sources
+### Create the Kubernetes Docker Bridge
+
+```
+sudo ip link add name kubernetes type bridge
+sudo ip addr add 10.200.0.1/24 dev kubernetes
+sudo ip link set kubernetes up
+```
+
+### Install the Docker Engine
 
 ```
 sudo apt-get update
 sudo apt-get install docker.io
 ```
 
-Configure the docker unit file
-
-Set the `--bip` flag to `10.200.0.1/24`:
+### Create the docker systemd unit file:
 
 ```
-sed -i -e "s/BRIDGE_IP/10.200.0.1\/24/g;" docker.service
-```
+Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.io
 
-Review the docker unit file.
+[Service]
+ExecStart=/usr/bin/docker daemon \
+  --bridge=kubernetes \
+  --iptables=false \
+  --ip-masq=false \
+  --host=unix:///var/run/docker.sock \
+  --log-level=error \
+  --storage-driver=overlay
+Restart=on-failure
+RestartSec=5
 
-```
-cat docker.service
+[Install]
+WantedBy=multi-user.target
 ```
 
 Copy the docker unit file into place.
@@ -52,11 +62,7 @@ sudo systemctl start docker
 #### Verify
 
 ```
-ip addr show docker0
-```
-
-```
-docker version
+sudo docker version
 ```
 
 ### node1
@@ -65,24 +71,41 @@ docker version
 gcloud compute ssh node1
 ```
 
+### Create the Kubernetes Docker Bridge
+
+```
+sudo ip link add name kubernetes type bridge
+sudo ip addr add 10.200.1.1/24 dev kubernetes
+sudo ip link set kubernetes up
+```
+
+### Install the Docker Engine
+
+```
+sudo apt-get update
+sudo apt-get install docker.io
+```
+
 ### Create the docker systemd unit file
 
 ```
-curl -O https://storage.googleapis.com/configs.kuar.io/docker.service
-```
+Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.io
 
-Configure the docker unit file
+[Service]
+ExecStart=/usr/bin/docker daemon \
+  --bridge=kubernetes \
+  --iptables=false \
+  --ip-masq=false \
+  --host=unix:///var/run/docker.sock \
+  --log-level=error \
+  --storage-driver=overlay
+Restart=on-failure
+RestartSec=5
 
-Set the `--bip` flag to `10.200.1.1/24`:
-
-```
-sudo sed -i -e "s/BRIDGE_IP/10.200.1.1\/24/g;" docker.service
-```
-
-Review the docker unit file.
-
-```
-cat docker.service
+[Install]
+WantedBy=multi-user.target
 ```
 
 Copy the docker unit file into place.
@@ -102,8 +125,5 @@ sudo systemctl start docker
 #### Verify
 
 ```
-ip addr show docker0
-```
-```
-docker version
+sudo docker version
 ```
