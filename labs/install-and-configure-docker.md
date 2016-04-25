@@ -56,7 +56,7 @@ Start docker:
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable docker
-sudo systemctl start docker
+sudo systemctl restart docker
 ```
 
 #### Verify
@@ -119,7 +119,7 @@ Start docker:
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable docker
-sudo systemctl start docker
+sudo systemctl restart docker
 ```
 
 #### Verify
