@@ -22,19 +22,13 @@ Requires=docker.service
 [Service]
 ExecStart=/usr/local/bin/hyperkube \
   kubelet \
-  --api-servers=http://127.0.0.1:8080 \
+  --api-servers=http://node0:8080 \
   --allow-privileged=true
 Restart=on-failure
 RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-```
-
-Review the kubelet unit file:
-
-```
-cat kubelet.service
 ```
 
 Start the kubelet service:
@@ -53,10 +47,5 @@ sudo systemctl start kubelet
 
 ```
 sudo systemctl status kubelet
-```
-
-#### laptop
-
-```
-kubectl get nodes
+kubectl --server http://node0:8080 get nodes
 ```
