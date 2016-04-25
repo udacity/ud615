@@ -37,6 +37,7 @@ Kubernetes can be broken up into two parts: the controller and worker nodes. The
 #### Labs
 
   * [Install and configure etcd](labs/install-and-configure-etcd.md)
+  * [Download a Kubernetes release](labs/download-a-kubernetes-release.md)
   * [Install and configure the API Server](labs/install-and-configure-apiserver.md)
   * [Install and configure the Controller Manager](labs/install-and-configure-controller-manager.md)
   * [Install and configure the Scheduler](labs/install-and-configure-scheduler.md)
