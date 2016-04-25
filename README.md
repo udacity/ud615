@@ -8,7 +8,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 ### Setup GCE and Enable Cloud Shell 
 
-In this section you will create a Google Compute Engine (GCE) account. GCE will allow you to the create VMs, Networks, and Storage volumes required for this workshop. GCE also provides the Cloud Shell computing environment that will be used complete the labs.
+In this section you will create a Google Compute Engine (GCE) account. GCE will allow you to the create VMs, Networks, and Storage volumes required for this workshop. GCE also provides the [Cloud Shell](https://cloud.google.com/shell/docs) computing environment that will be used complete the labs.
 
 #### Labs
 
