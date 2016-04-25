@@ -4,7 +4,7 @@ In this lab you will configure the network between node0 and node1 to ensure cro
 
 ## Create network routes between Docker hosts.
 
-### laptop
+### Cloud Shell
 
 ```
 gcloud compute routes create default-route-10-200-0-0-24 \
@@ -21,15 +21,7 @@ gcloud compute routes create default-route-10-200-1-0-24 \
 gcloud compute routes list
 ```
 
-## Allow external access to the API server secure port
-
-```
-gcloud compute firewall-rules create default-allow-kubernetes-secure \
-  --allow tcp:6443 \
-  --source-ranges 0.0.0.0/0
-``` 
-
-## Allow add-ons to query the API server
+Allow access the API server
 
 ```
 gcloud compute firewall-rules create default-allow-local-api \
@@ -69,8 +61,9 @@ sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE
 ```
 gcloud compute ssh node0
 ```
+
 ```
-docker run -t -i --rm busybox /bin/sh
+sudo docker run -t -i --rm busybox /bin/sh
 ```
 
 ```
@@ -84,7 +77,7 @@ gcloud compute ssh node1
 ```
 
 ```
-docker run -t -i --rm busybox /bin/sh
+sudo docker run -t -i --rm busybox /bin/sh
 ```
 
 ```
