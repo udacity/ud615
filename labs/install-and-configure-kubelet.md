@@ -8,13 +8,7 @@ gcloud compute ssh node1
 
 ### Download Kubernetes release tar
 
-```
-wget https://github.com/kubernetes/kubernetes/releases/download/v1.2.3/kubernetes.tar.gz
-tar -xvf kubernetes.tar.gz
-tar -xvf kubernetes/server/kubernetes-server-linux-amd64.tar.gz
-sudo cp kubernetes/server/bin/hyperkube /usr/local/bin
-sudo chmod +x /usr/local/bin/hyperkube
-```
+See the [Download a Kubernetes release](labs/download-a-kubernetes-release.md) lab.
 
 ### Create the kubelet systemd unit file:
 
