@@ -64,8 +64,8 @@ cat pods/secure-monolith.yaml
 
 ### Quiz
 
-* How are secrets exposed to the pod?
-* How are configmaps exposed to the pod?
+* How are secrets exposed to the `secure-monolith` Pod?
+* How are configmaps exposed to the `secure-monolith` Pod?
 
 Create the `secure-monolith` Pod using kubectl:
 
@@ -75,7 +75,7 @@ kubectl create -f pods/secure-monolith.yaml
 
 #### Test the HTTPS endpoint
 
-Forward local port 10443 to 443 of the `secure-monolith` pod:
+Forward local port 10443 to 443 of the `secure-monolith` Pod:
 
 ```
 kubectl port-forward secure-monolith 10443:443
@@ -87,7 +87,7 @@ Use the `curl` command to test the HTTPS endpoint:
 curl --cacert tls/ca.pem https://127.0.0.1:10443
 ```
 
-Use the `kubectl logs` command to verify traffic to the `secure-monolith` pod:
+Use the `kubectl logs` command to verify traffic to the `secure-monolith` Pod:
 
 ```
 kubectl logs -c nginx secure-monolith
@@ -95,4 +95,4 @@ kubectl logs -c nginx secure-monolith
 
 ## Summary
 
-Secrets and Configmaps allow you to store application secrets and configuration data, then expose them to pods at runtime. In this lab you learned how to expose Secrets and Configmaps to pods using volume mounts. You also learned how to run multiple containers in a single pod.
+Secrets and Configmaps allow you to store application secrets and configuration data, then expose them to Pods at runtime. In this lab you learned how to expose Secrets and Configmaps to Pods using volume mounts. You also learned how to run multiple containers in a single Pod.
