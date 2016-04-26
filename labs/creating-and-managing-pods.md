@@ -3,7 +3,7 @@
 At the core of Kubernetes is the Pod. Pods hold a collection of one or more containers and volumes and represent a logical application. In this lab you will learn how to:
 
 * Write a Pod configuration file
-* Create and delete Pods
+* Create and inspect Pods 
 * Interact with Pods remotely using kubectl
 
 ## Tutorial: Creating Pods
