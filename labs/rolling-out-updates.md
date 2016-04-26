@@ -33,7 +33,7 @@ kubectl describe deployments auth
 kubectl get pods --watch
 ```
 
-## Tutorial: Pause and Resume an Active Rollback
+## Tutorial: Pause and Resume an Active Rollout
 
 ```
 kubectl rollout history deployment hello
