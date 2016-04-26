@@ -2,7 +2,7 @@
 
 Kubernetes supports monitoring applications in the form of readiness and liveness probes. Health checks on be performed on each container in a pod. Readiness probes indicate when a pod is "ready" to serve traffice. Liveness probes indicate a container is "alive". If a liveness probe fails multiple times the container will be restarted. Liveness probes that continue to fail will cause a pod to enter a crashloop.
 
-## Creating Pods with Liveness and Readiness Probes.
+## Tutorial: Creating Pods with Liveness and Readiness Probes.
 
 ### Review the monolith-monitoring pod
 
