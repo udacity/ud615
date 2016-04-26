@@ -33,7 +33,7 @@ kubectl describe deployments auth
 kubectl get pods --watch
 ```
 
-## Tutorial: Rollout, Pause, Resume and Rollback the Hello service
+## Tutorial: Pause and Resume an Active Rollback
 
 ```
 kubectl rollout history deployment hello
@@ -54,10 +54,6 @@ kubectl apply -f deployments/hello.yaml --record
 
 ```
 kubectl describe deployments hello
-```
-
-```
-kubectl logs <hello-pod-id>
 ```
 
 ```
