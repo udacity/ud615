@@ -43,7 +43,7 @@ kubectl describe pods <pod-name>
 
 ## Exercise: Interact with a Pod remotely
 
-Pods are allocated a private IP address by default and cannot be reached outside of the cluster. In this exercise use the `kubectl port-forward` command to map a local port to a port inside the `monolith` pod. 
+Pods are allocated a private IP address by default and cannot be reached outside of the cluster. Use the `kubectl port-forward` command to map a local port to a port inside the `monolith` pod. 
 
 Hints 
 
