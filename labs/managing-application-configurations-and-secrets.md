@@ -31,9 +31,9 @@ kubectl describe secrets certs
 
 ## Tutorial: Creating Configmaps
 
-The nginx container also needs a configuration file to setup the reverse proxy and which TLS certs to use for HTTPS traffic. In this section we will create configmap from the proxy.conf nginx configuration file.
+The nginx container also needs a configuration file to setup the secure reverse proxy. In this section you will create a configmap from the `proxy.conf` nginx configuration file.
 
-Create the `nginx-proxy-conf` configmap based on the proxy.conf nginx configuration file:
+Create the `nginx-proxy-conf` configmap based on the `proxy.conf` nginx configuration file:
 
 ```
 kubectl create configmap nginx-proxy-conf --from-file=nginx/proxy.conf
@@ -47,7 +47,9 @@ kubectl describe configmaps nginx-proxy-conf
 
 ## Exercise: Use Configmaps and Secrets
 
-### Examine the `secure-monolith` pod configuration file.
+In this section you will expose the `nginx-proxy-conf` configmap and the `tls-certs` secrets to the `secure-monolith` pod at runtime:
+
+Examine the `secure-monolith` pod configuration file:
 
 ```
 cat pods/secure-monolith.yaml
@@ -62,7 +64,7 @@ cat pods/secure-monolith.yaml
 kubectl create -f pods/secure-monolith.yaml
 ```
 
-### Test the HTTPS support
+#### Test the HTTPS endpoint
 
 Forward local port 10443 to 443 of the `secure-monolith` pod:
 
