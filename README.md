@@ -1,10 +1,20 @@
 # Craft Kubernetes Workshop
 
+In this workshop you will learn how to:
+
+* Provision a basic Kubernetes cluster from the ground up using [Google Compute Engine](https://cloud.google.com/compute)
+* Provision a complete Kubernetes using [Google Container Engine](https://cloud.google.com/container-engine)
+* Deploy and manage Docker containers using kubectl
+
 Kubernetes Version: 1.2.3
 
-The slides from this workshop are hosted [online](http://go-talks.appspot.com/github.com/kelseyhightower/intro-to-kubernetes-workshop/slides/talk.slide#1)
-
 ## Google Compute Engine (GCE)
+
+GCE will be used to setup a Kubernetes cluster from the ground up. This workshop will require the ability to create the following resources:
+
+* Virtual Machines
+* Routes
+* Firewall Rules
 
 ### Setup GCE and Enable Cloud Shell 
 
