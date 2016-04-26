@@ -58,7 +58,7 @@ cat pods/secure-monolith.yaml
 * How are secrets exposed to the pod?
 * How are configmaps exposed to the pod?
 
-### Create the `secure-monolith` pod
+### Create the secure-monolith Pod
 
 ```
 kubectl create -f pods/secure-monolith.yaml
