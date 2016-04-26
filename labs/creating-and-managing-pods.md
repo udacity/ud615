@@ -14,23 +14,34 @@ Explore the `monolith` pod configuration file:
 cat pods/monolith.yaml
 ```
 
+Create the `monolith` pod using kubectl:
+
 ```
 kubectl create -f pods/monolith.yaml
 ```
 
-### Listing Pods
+## Exercise: View Pod details
+
+Use the `kubectl get` and `kubect describe` commands to view details for `monolith` Pod:
+
+Hints
 
 ```
-kubectl get pods
+kubectl get pods <pod-name>
 ```
 
-### Pod info
-
 ```
-kubectl describe pods monolith
+kubectl describe pods <pod-name>
 ```
 
-### Port Forwarding
+* What is the IP address of the `monolith` pod?
+* What node is the `monolith` pod running on?
+
+## Exercise: Interact with a Pod remotely
+
+Pods are allocated a private IP address by default and cannot be reached outside of the cluster. In this exercise use the `kubectl port-forward` command to map a local port to a port inside the `monolith` pod. 
+
+Hints 
 
 ```
 kubectl port-forward monolith 10080:80
@@ -40,20 +51,32 @@ kubectl port-forward monolith 10080:80
 curl http://127.0.0.1:10080
 ```
 
-### Logs
+```
+curl http://127.0.0.1:10080/secure
+```
+
+```
+curl http://127.0.0.1:10080/login
+```
+
+```
+curl http://127.0.0.1:10080/secure
+```
+
+## Exercise: View the logs of a Pod
+
+Use the `kubectl logs` command to view the logs for the `monolith` Pod:
 
 ```
 kubectl logs monolith
 ```
 
-### Exec
+> Use the -f flag and observe what happens.
+
+## Exercise: Run an interactive shell inside a Pod
+
+Use the `kubectl exec` command to run an interactive shell inside the `monolith` Pod:
 
 ```
 kubectl exec monolith --stdin --tty -c monolith /bin/sh
-```
-
-### Delete
-
-```
-kubectl delete pods monolith
 ```
