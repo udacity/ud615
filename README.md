@@ -64,10 +64,10 @@ Kubernetes is all about applications and in this section you will utilize the Ku
 
 [App](https://github.com/kelseyhightower/app) is hosted on GitHub and provides an example 12 Facter application. During this workshop we will be working with the following Docker images:
 
-* kelseyhightower/monolith:1.0.0 (Monolith bundles the auth and hello services)
+* kelseyhightower/monolith:1.0.0 - Monolith includes auth and hello services
 * kelseyhightower/auth:1.0.0 - Auth microservice. Generates JWT tokens to authenticated users.
 * kelseyhightower/hello:1.0.0 - Hello microservice. Greets authenticated users.
-* ngnix:1.9.14 - used as a frontend to the auth and hello services.
+* ngnix:1.9.14 - Frontend to the auth and hello services.
 
 #### Labs
 
