@@ -6,13 +6,13 @@ If a liveness probe fails multiple times the container will be restarted. Livene
 
 ## Tutorial: Creating Pods with Liveness and Readiness Probes
 
-Explore the `healty-monolith` pod configuration file:
+Explore the `healthy-monolith` pod configuration file:
 
 ```
 cat pods/healthy-monolith.yaml
 ```
 
-Create the `healty-monolith` pod using kubectl:
+Create the `healthy-monolith` pod using kubectl:
 
 ```
 kubectl create -f pods/healthy-monolith.yaml
@@ -20,7 +20,7 @@ kubectl create -f pods/healthy-monolith.yaml
 
 ## Exercise: View Pod details
 
-Pods will not be marked ready until the readiness probe returns an HTTP 200 response. Use the `kubectl describe` to view details for the `healty-monolith` Pod.
+Pods will not be marked ready until the readiness probe returns an HTTP 200 response. Use the `kubectl describe` to view details for the `healthy-monolith` Pod.
 
 ### Hints
 
@@ -30,72 +30,79 @@ kubectl describe pods <pod-name>
 
 ### Quiz
 
-* How is the readiness of the `healty-monolith` Pod determined?
-* How is the liveness of the `healty-monolith` Pod determined?
-* How often will the readiness probe be checked?
-* How often will the liveness probe be checked?
+* How is the readiness of the `healthy-monolith` Pod determined?
+* How is the liveness of the `healthy-monolith` Pod determined?
+* How often is the readiness probe checked?
+* How often is the liveness probe checked?
 
-The example application logs each health check. Use the `kubectl logs` command to view them:
+> The `healthy-monolith` Pod logs each health check. Use the `kubectl logs` command to view them.
 
-```
-kubectl logs monolith
-```
+## Tutorial: Experiment with Readiness and Liveness Probes
 
-How often is the readiness probe checked?
+In this tutorial you will get to observe how Kubernetes responds to failed readiness and liveness probes. The `monolith` container supports the ability to toggle the HTTP status code returned for the `/healthz` and `/readiness` endpoints.
 
-## Experiment with Readiness and Liveness probes
-
-In this section you will get a chance to observe how Kubernetes reacts to failed readiness and liveness probes. The monolith app supports the ability to toggle the HTTP status code returned for the `/healthz` and `/readiness` endpoints. Use kubectl to forward a local port to the health port of the monolith app.
-
-The following command forwards local port 10081 to port 81 of the monolith pod:
+Use the `kubectl port-forward` command to forward a local port to the health port of the `healthy-monolith` Pod.
 
 ```
-kubectl port-forward monolith 10081:81
+kubectl port-forward healthy-monolith 10081:81
 ```
 
-### Experiment with Liveness probes
+> You know have access to the /healthz and /readiness HTTP endpoints exposed by the monolith container.
 
-At this point you can force the readiness probe to start returning HTTP status code 503 (Service Unavailable) for all new requests causing the readiness probe to fail. Use the `curl` command to toggle the readiness probe status:
+### Experiment with Readiness Probes
+
+Force the `monolith` container readiness probe to fail. Use the `curl` command to toggle the readiness probe status:
 
 ```
 curl http://127.0.0.1:10081/readiness/status
 ```
 
-Wait about 15 seconds and view the status of the monolith pod. Are all the containers in the monolith pod ready?
+Wait about 15 seconds and get the status of the `healthy-monolith` Pod using the `kubectl get pods` command:
 
 ```
-kubectl get pods monolith
+kubectl get pods `healthy-monolith`
 ```
 
-Use the `kubectl describe` command to get more details about the readiness check:
+Use the `kubectl describe` command to get more details about the failing readiness probe:
 
 ```
-kubectl describe pods monolith
+kubectl describe pods healthy-monolith
 ```
 
-Examaine the events for the monolith pod. Can you find the events that indicate the readiness probe has failed?
+Examaine the events for the `healthy-monolith` Pod.
 
-```
-Readiness probe failed: HTTP probe failed with statuscode: 503
-```
-
-Use the `curl` command again to toggle the readiness probe focing it to return HTTP 200 for all future requests:
+Force the `monolith` container readiness probe to pass. Use the `curl` command to toggle the readiness probe status:
 
 ```
 curl http://127.0.0.1:10081/readiness/status
 ```
 
-## Exercise: Experiment with Liveness probes
+Wait about 15 seconds and get the status of the `healthy-monolith` Pod using the `kubectl get pods` command:
 
-Building on what you learned in the previous use the `kubectl port-forward` and `curl` commands to toggle HTTP status for the monolith liveness probe.
+```
+kubectl get pods `healthy-monolith`
+```
 
-> Hint: toggle the liveness probe status using the `/healthz/status` endpoint on the monolith container.
+## Exercise: Experiment with Liveness Probes
 
-In 15 second interval use the `kubectl get pods` and `kubectl describe` commands to examine the state of the monolith pod.
+Building on what you learned in the previous tutorial use the `kubectl port-forward` and `curl` commands to force the `monolith` container liveness probe to fail. Observe how Kubernetes responds to failing liveness probes.
 
-Did the liveness probe fail? If so, what happened when it failed?
+### Hints
+
+```
+kubectl port-forward healthy-monolith 10081:81
+```
+
+```
+curl http://127.0.0.1:10081/healthz/status
+```
+
+### Quiz
+
+* What happened when the liveness probe failed?
+* What events where created when the liveness probe failed?
 
 ## Summary
 
 In this lab you learned that Kubernetes supports application monitoring using
-liveness and readiness probes. You have learned how to add readiness and liveness probes to your pods and how to review the status of a pod using kubectl. 
+liveness and readiness probes. You also learned how to add readiness and liveness probes to Pods and what happens when probes fail. 
