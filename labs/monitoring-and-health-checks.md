@@ -1,8 +1,6 @@
 # Monitoring and Health Checks
 
-Kubernetes supports monitoring applications in the form of readiness and liveness probes. Health checks can be performed on each container in a Pod. Readiness probes indicate when a Pod is "ready" to serve traffic. Liveness probes indicate a container is "alive".
-
-If a liveness probe fails multiple times the container will be restarted. Liveness probes that continue to fail will cause a Pod to enter a crashloop. If a readiness check fails the container will be marked as not ready and will be removed from any load balancers.
+Kubernetes supports monitoring applications in the form of readiness and liveness probes. Health checks can be performed on each container in a Pod. Readiness probes indicate when a Pod is "ready" to serve traffic. Liveness probes indicate a container is "alive". If a liveness probe fails multiple times the container will be restarted. Liveness probes that continue to fail will cause a Pod to enter a crashloop. If a readiness check fails the container will be marked as not ready and will be removed from any load balancers.
 
 In this lab you will deploy a new Pod named `healthy-monolith`, which is largely based on the `monolith` Pod with the addition of readiness and liveness probes.
 
