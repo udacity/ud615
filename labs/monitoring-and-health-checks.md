@@ -93,7 +93,7 @@ Use the `curl` command again to toggle the readiness probe focing it to return H
 curl http://127.0.0.1:10081/readiness/status
 ```
 
-### Experiment with Liveness probes
+## Exercise: Experiment with Liveness probes
 
 Building on what you learned in the previous use the `kubectl port-forward` and `curl` commands to toggle HTTP status for the monolith liveness probe.
 
