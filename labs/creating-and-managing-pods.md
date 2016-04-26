@@ -6,6 +6,8 @@ At the core of Kubernetes is the Pod. Pods represent a logical application and h
 * Create and inspect Pods 
 * Interact with Pods remotely using kubectl
 
+In this lab you will create a Pod named `monolith` and interact with it using the kubectl command line tool.
+
 ## Tutorial: Creating Pods
 
 Explore the `monolith` pod configuration file:
