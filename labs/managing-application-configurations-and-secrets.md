@@ -8,7 +8,7 @@ Many applications require configuration settings and secrets such as TLS certifi
 
 In this lab we will secure the monolith pod using [Nginx](http://nginx.org/en), which will serve as a reverse proxy serving HTTPS in front of the monolith container.
 
-> The nginx container will be deployed in the same pod as the monolith container.
+> The nginx container will be deployed in the same pod as the monolith container because they are tightly coupled.
 
 ## Tutorial: Creating Secrets
 
