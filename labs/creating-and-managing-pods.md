@@ -60,12 +60,16 @@ curl http://127.0.0.1:10080/secure
 ```
 
 ```
-curl http://127.0.0.1:10080/login
+curl -u user http://127.0.0.1:10080/login
 ```
 
+> Type "password" at the prompt.
+
 ```
-curl http://127.0.0.1:10080/secure
+curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE0NjE5Njg0NjQsImlhdCI6MTQ2MTcwOTI2NCwiaXNzIjoiYXV0aC5zZXJ2aWNlIiwic3ViIjoidXNlciJ9.n1Jxs966tIQhIHi2vzHFG-Z3F9vd6VXBcCCWTW8xKCY" http://127.0.0.1:10080/secure
 ```
+
+> Use the JWT token from the previous login.
 
 ## Exercise: View the logs of a Pod
 
