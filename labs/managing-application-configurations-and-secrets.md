@@ -1,7 +1,7 @@
 # Managing application configurations and secrets
 
 ```
-kubectl create secret generic certs --from-file=tls/
+kubectl create secret generic tls-certs --from-file=tls/
 ```
 
 ```
@@ -9,11 +9,11 @@ kubectl describe secrets certs
 ```
 
 ```
-kubectl create configmap nginx-proxy --from-file=nginx/proxy.conf
+kubectl create configmap nginx-proxy-conf --from-file=nginx/proxy.conf
 ```
 
 ```
-kubectl describe configmaps nginx-proxy
+kubectl describe configmaps nginx-proxy-conf
 ```
 
 ```
