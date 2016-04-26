@@ -62,6 +62,8 @@ Examine the `secure-monolith` pod configuration file:
 cat pods/secure-monolith.yaml
 ```
 
+### Quiz
+
 * How are secrets exposed to the pod?
 * How are configmaps exposed to the pod?
 
