@@ -20,7 +20,7 @@ Create the `tls-certs` secret from the TLS certificates stored under the tls dir
 kubectl create secret generic tls-certs --from-file=tls/
 ```
 
-Examine the `tls-certs` secret.
+Examine the `tls-certs` secret:
 
 ```
 kubectl describe secrets certs
@@ -39,7 +39,7 @@ Create the `nginx-proxy-conf` configmap based on the proxy.conf nginx configurat
 kubectl create configmap nginx-proxy-conf --from-file=nginx/proxy.conf
 ```
 
-Examine the `nginx-proxy-conf` configmap.
+Examine the `nginx-proxy-conf` configmap:
 
 ```
 kubectl describe configmaps nginx-proxy-conf
