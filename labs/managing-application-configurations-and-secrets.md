@@ -6,13 +6,13 @@ Many applications require configuration settings and secrets such as TLS certifi
 * create configmaps to store application configuration data
 * use secrets and configmaps in a pod
 
-In this lab we will secure the monolith pod using Nginx, which will serve as a reverse proxy serving HTTPS in front of the monolith container.
+In this lab we will secure the monolith pod using [Nginx](http://nginx.org/en), which will serve as a reverse proxy serving HTTPS in front of the monolith container.
 
-> The Nginx container will be deployed in the same pod as the monolith container.
+> The nginx container will be deployed in the same pod as the monolith container.
 
 ## Tutorial: Creating Secrets
 
-Before we can use Nginx as a reverse proxy serving HTTPS traffic we need some TLS certificates. In this section we will store a set of self-signed TLS certificates in Kubernetes as secrets.
+Before we can use the nginx container to serve HTTPS traffic we need some TLS certificates. In this section we will store a set of self-signed TLS certificates in Kubernetes as secrets.
 
 Create the `tls-certs` secret from the TLS certificates stored under the tls directory:
 
@@ -31,7 +31,7 @@ kubectl describe secrets certs
 
 ## Tutorial: Creating Configmaps
 
-The Nginx container also needs a configuration file to setup the reverse proxy and which TLS certs to use for HTTPS traffic. In this section we will create configmap from the proxy.conf nginx configuration file.
+The nginx container also needs a configuration file to setup the reverse proxy and which TLS certs to use for HTTPS traffic. In this section we will create configmap from the proxy.conf nginx configuration file.
 
 Create the `nginx-proxy-conf` configmap based on the proxy.conf nginx configuration file:
 
@@ -39,7 +39,7 @@ Create the `nginx-proxy-conf` configmap based on the proxy.conf nginx configurat
 kubectl create configmap nginx-proxy-conf --from-file=nginx/proxy.conf
 ```
 
-Examine the `nginx-proxy-conf` configmap.
+### Examine the `nginx-proxy-conf` configmap.
 
 ```
 kubectl describe configmaps nginx-proxy-conf
