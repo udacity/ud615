@@ -42,6 +42,7 @@ kubectl describe pods <pod-name>
 * What node is the `monolith` Pod running on?
 * What containers are running in the `monolith` Pod?
 * What are the labels attached to the `monolith` Pod?
+* What arguments are set on the `monolith` container?
 
 ## Exercise: Interact with a Pod remotely
 
