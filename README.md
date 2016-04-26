@@ -54,7 +54,7 @@ Kubernetes worker nodes are responsible for running containers (inside of pods),
 
 ## Provision Kubernetes using GKE
 
-Kubernetes can be configured with many options and add-ons, but can be time consuming to bootstrap from the ground up. In this section you will bootstrap Kubernetes using [Google Container Engine](https://cloud.google.com/container-engine)(GKE).
+Kubernetes can be configured with many options and add-ons, but can be time consuming to bootstrap from the ground up. In this section you will bootstrap Kubernetes using [Google Container Engine](https://cloud.google.com/container-engine) (GKE).
 
   * [Provision a Kubernetes Cluster with GKE](labs/provision-kubernetes-cluster-with-gke.md)
 
