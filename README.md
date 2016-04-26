@@ -62,7 +62,7 @@ Kubernetes can be configured with many options and add-ons, but can be time cons
 
 Kubernetes is all about applications and in this section you will utilize the Kubernetes API to deploy, manage, and upgrade applications. In this part of the workshop you will use an example application called "app" to complete the labs.
 
-[App](https://github.com/kelseyhightower/app) is hosted on GitHub and provides an example 12 Facter application. During this workshop we will be working with the following Docker images:
+[App](https://github.com/kelseyhightower/app) is hosted on GitHub and provides an example 12 Facter application. During this workshop you will be working with the following Docker images:
 
 * kelseyhightower/monolith:1.0.0 - Monolith includes auth and hello services
 * kelseyhightower/auth:1.0.0 - Auth microservice. Generates JWT tokens to authenticated users.
