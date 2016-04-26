@@ -37,9 +37,9 @@ kubectl describe pods <pod-name>
 
 > The `healthy-monolith` Pod logs each health check. Use the `kubectl logs` command to view them.
 
-## Tutorial: Experiment with Readiness and Liveness Probes
+## Tutorial: Experiment with Readiness Probes
 
-In this tutorial you will get to observe how Kubernetes responds to failed readiness and liveness probes. The `monolith` container supports the ability to toggle the HTTP status code returned for the `/healthz` and `/readiness` endpoints.
+In this tutorial you will observe how Kubernetes responds to failed readiness probes. The `monolith` container supports the ability to force failures of it's readiness and liveness probes. This will enable us to simulate failures for the `healthy-monolith` Pod. 
 
 Use the `kubectl port-forward` command to forward a local port to the health port of the `healthy-monolith` Pod.
 
