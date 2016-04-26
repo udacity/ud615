@@ -65,7 +65,7 @@ curl http://127.0.0.1:10081/readiness/status
 Wait about 15 seconds and get the status of the `healthy-monolith` Pod using the `kubectl get pods` command:
 
 ```
-kubectl get pods `healthy-monolith`
+kubectl get pods healthy-monolith
 ```
 
 Use the `kubectl describe` command to get more details about the failing readiness probe:
