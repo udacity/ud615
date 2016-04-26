@@ -4,7 +4,7 @@ Kubernetes supports monitoring applications in the form of readiness and livenes
 
 If a liveness probe fails multiple times the container will be restarted. Liveness probes that continue to fail will cause a Pod to enter a crashloop. If a readiness check fails the container will be marked as not ready and will be removed from any load balancers.
 
-## Tutorial: Creating Pods with Liveness and Readiness Probes.
+## Tutorial: Creating Pods with Liveness and Readiness Probes
 
 Explore the `healty-monolith` pod configuration file:
 
