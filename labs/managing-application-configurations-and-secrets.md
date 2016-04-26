@@ -31,7 +31,7 @@ kubectl describe secrets certs
 
 ## Tutorial: Creating Configmaps
 
-The nginx container also needs a configuration file to setup the secure reverse proxy. In this section you will create a configmap from the `proxy.conf` nginx configuration file.
+The nginx container also needs a configuration file to setup the secure reverse proxy. In this tutorial you will create a configmap from the `proxy.conf` nginx configuration file.
 
 Create the `nginx-proxy-conf` configmap based on the `proxy.conf` nginx configuration file:
 
