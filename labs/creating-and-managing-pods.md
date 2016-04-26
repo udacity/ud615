@@ -26,7 +26,7 @@ kubectl create -f pods/monolith.yaml
 
 Use the `kubectl get` and `kubect describe` commands to view details for `monolith` Pod:
 
-Hints
+### Hints
 
 ```
 kubectl get pods
@@ -35,6 +35,8 @@ kubectl get pods
 ```
 kubectl describe pods <pod-name>
 ```
+
+### Quiz
 
 * What is the IP address of the `monolith` Pod?
 * What node is the `monolith` Pod running on?
