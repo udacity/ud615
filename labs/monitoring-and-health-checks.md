@@ -74,7 +74,7 @@ Use the `kubectl describe` command to get more details about the failing readine
 kubectl describe pods healthy-monolith
 ```
 
-Examaine the events for the `healthy-monolith` Pod.
+> Notice the events for the `healthy-monolith` Pod report details about failing readiness probe.
 
 Force the `monolith` container readiness probe to pass. Use the `curl` command to toggle the readiness probe status:
 
