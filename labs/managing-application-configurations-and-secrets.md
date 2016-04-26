@@ -12,7 +12,7 @@ In this lab we will create a new Pod named `secure-monolith` based on the `healt
 
 ## Tutorial: Creating Secrets
 
-Before we can use the nginx container to serve HTTPS traffic we need some TLS certificates. In this tutorial you will store a set of self-signed TLS certificates in Kubernetes as secrets.
+Before we can use the `nginx` container to serve HTTPS traffic we need some TLS certificates. In this tutorial you will store a set of self-signed TLS certificates in Kubernetes as secrets.
 
 Create the `tls-certs` secret from the TLS certificates stored under the tls directory:
 
