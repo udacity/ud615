@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "monolith-secure"
+  name: "secure-monolith"
 spec:
   containers:
     - name: nginx
@@ -11,9 +11,9 @@ spec:
           exec:
             command: ["/usr/sbin/nginx","-s","quit"]
       volumeMounts:
-        - name: "nginx-conf"
+        - name: "nginx-proxy-conf"
           mountPath: "/etc/nginx/conf.d"
-        - name: "certs"
+        - name: "tls-certs"
           mountPath: "/etc/tls"
     - name: monolith
       image: "kelseyhightower/monolith:1.0.0"
@@ -42,12 +42,12 @@ spec:
         initialDelaySeconds: 5
         timeoutSeconds: 1
   volumes:
-    - name: "certs"
+    - name: "tls-certs"
       secret:
-        secretName: "certs"
-    - name: "nginx-conf"
+        secretName: "tls-certs"
+    - name: "nginx-proxy-conf"
       configMap:
-        name: "nginx-proxy"
+        name: "nginx-proxy-conf"
         items:
           - key: "proxy.conf"
             path: "proxy.conf"
