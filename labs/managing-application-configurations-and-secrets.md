@@ -26,8 +26,10 @@ Examine the `tls-certs` secret:
 kubectl describe secrets certs
 ```
 
+### Quiz
+
 * How many items are stored under the `tls-certs` secret?
-* What are key names? Where did they come from?
+* What are key the names?
 
 ## Tutorial: Creating Configmaps
 
@@ -45,9 +47,14 @@ Examine the `nginx-proxy-conf` configmap:
 kubectl describe configmaps nginx-proxy-conf
 ```
 
-## Exercise: Use Configmaps and Secrets
+### Quiz
 
-In this section you will expose the `nginx-proxy-conf` configmap and the `tls-certs` secrets to the `secure-monolith` pod at runtime:
+* How many items are stored under the `nginx-proxy-conf` configmap?
+* What are the key names?
+
+## Tutorial: Use Configmaps and Secrets
+
+In this tutorial you will expose the `nginx-proxy-conf` configmap and the `tls-certs` secrets to the `secure-monolith` pod at runtime:
 
 Examine the `secure-monolith` pod configuration file:
 
