@@ -27,15 +27,17 @@ Use the `kubectl get` and `kubect describe` commands to view details for `monoli
 Hints
 
 ```
-kubectl get pods <pod-name>
+kubectl get pods
 ```
 
 ```
 kubectl describe pods <pod-name>
 ```
 
-* What is the IP address of the `monolith` pod?
-* What node is the `monolith` pod running on?
+* What is the IP address of the `monolith` Pod?
+* What node is the `monolith` Pod running on?
+* What containers are running in the `monolith` Pod?
+* What are the labels attached to the `monolith` Pod?
 
 ## Exercise: Interact with a Pod remotely
 
