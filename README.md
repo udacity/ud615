@@ -67,8 +67,8 @@ Kubernetes is all about applications and in the section you will utilize the Kub
   * [Creating and managing pods](labs/creating-and-managing-pods.md)
   * [Monitoring and health checks](labs/monitoring-and-health-checks.md)
   * [Managing application configurations and secrets](labs/managing-application-configurations-and-secrets.md)
-  * [Creating and managing deployments](labs/creating-and-managing-deployments.md)
   * [Creating and managing services](labs/creating-and-managing-services.md)
+  * [Creating and managing deployments](labs/creating-and-managing-deployments.md)
   * [Rolling out updates](labs/rolling-out-updates.md)
 
 ## Links
