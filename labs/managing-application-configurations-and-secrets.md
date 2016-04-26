@@ -39,7 +39,7 @@ Create the `nginx-proxy-conf` configmap based on the proxy.conf nginx configurat
 kubectl create configmap nginx-proxy-conf --from-file=nginx/proxy.conf
 ```
 
-### Examine the `nginx-proxy-conf` configmap.
+Examine the `nginx-proxy-conf` configmap.
 
 ```
 kubectl describe configmaps nginx-proxy-conf
