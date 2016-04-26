@@ -24,7 +24,7 @@ kubectl create -f pods/monolith.yaml
 
 ## Exercise: View Pod details
 
-Use the `kubectl get` and `kubect describe` commands to view details for `monolith` Pod:
+Use the `kubectl get` and `kubect describe` commands to view details for the `monolith` Pod:
 
 ### Hints
 

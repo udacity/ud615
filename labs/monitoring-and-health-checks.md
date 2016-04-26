@@ -1,47 +1,39 @@
-# Monitoring and health checks
+# Monitoring and Health Checks
 
-Kubernetes supports monitoring applications in the form of readiness and liveness probes. Health checks on be performed on each container in a pod. Readiness probes indicate when a pod is "ready" to serve traffice. Liveness probes indicate a container is "alive". If a liveness probe fails multiple times the container will be restarted. Liveness probes that continue to fail will cause a pod to enter a crashloop.
+Kubernetes supports monitoring applications in the form of readiness and liveness probes. Health checks can be performed on each container in a Pod. Readiness probes indicate when a Pod is "ready" to serve traffic. Liveness probes indicate a container is "alive".
+
+If a liveness probe fails multiple times the container will be restarted. Liveness probes that continue to fail will cause a Pod to enter a crashloop. If a readiness check fails the container will be marked as not ready and will be removed from any load balancers.
 
 ## Tutorial: Creating Pods with Liveness and Readiness Probes.
 
-### Review the monolith-monitoring pod
-
-Liveness probes are defined for each container in a pod using the `spec.containers.livenessProbe` key:
+Explore the `healty-monolith` pod configuration file:
 
 ```
-livenessProbe:
-  httpGet:
-    path: /healthz
-    port: 81
-    scheme: HTTP
-  initialDelaySeconds: 5
-  periodSeconds: 15
-  timeoutSeconds: 5
+cat pods/healthy-monolith.yaml
 ```
 
-Readiness probes are defined for each container in a pod using the `spec.containers.readinessProbe` key:
+Create the `healty-monolith` pod using kubectl:
 
 ```
-readinessProbe:
-  httpGet:
-    path: /readiness
-    port: 81
-    scheme: HTTP
-  initialDelaySeconds: 5
-  timeoutSeconds: 1
+kubectl create -f pods/healthy-monolith.yaml
 ```
 
-Create the pod with the kubectl create command:
+## Exercise: View Pod details
+
+Pods will not be marked ready until the readiness probe returns an HTTP 200 response. Use the `kubectl describe` to view details for the `healty-monolith` Pod.
+
+### Hints
 
 ```
-kubectl create -f kubernetes/monolith-monitoring-pod.yaml
+kubectl describe pods <pod-name>
 ```
 
-Pods will not be marked ready until the readiness probe return an HTTP 200 response. Use the kubectl describe command to get pod status details:
+### Quiz
 
-```
-kubectl describe pods monolith
-```
+* How is the readiness of the `healty-monolith` Pod determined?
+* How is the liveness of the `healty-monolith` Pod determined?
+* How often will the readiness probe be checked?
+* How often will the liveness probe be checked?
 
 The example application logs each health check. Use the `kubectl logs` command to view them:
 
@@ -55,7 +47,7 @@ How often is the readiness probe checked?
 
 In this section you will get a chance to observe how Kubernetes reacts to failed readiness and liveness probes. The monolith app supports the ability to toggle the HTTP status code returned for the `/healthz` and `/readiness` endpoints. Use kubectl to forward a local port to the health port of the monolith app.
 
-The following command fowards local port 10081 to port 81 of the monolith pod:
+The following command forwards local port 10081 to port 81 of the monolith pod:
 
 ```
 kubectl port-forward monolith 10081:81
