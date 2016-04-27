@@ -11,7 +11,7 @@ gcloud compute ssh node0
 ### Download etcd release
 
 ```
-wget https://github.com/coreos/etcd/releases/download/v2.3.2/etcd-v2.3.2-linux-amd64.tar.gz
+wget https://storage.googleapis.com/craft-conf/etcd-v2.3.2-linux-amd64.tar.gz
 tar -xvf etcd-v2.3.2-linux-amd64.tar.gz
 sudo cp etcd-v2.3.2-linux-amd64/etcdctl /usr/local/bin/
 sudo cp etcd-v2.3.2-linux-amd64/etcd /usr/local/bin/
