@@ -6,7 +6,11 @@
 
 Visit the Google Cloud Shell [getting started guide](https://cloud.google.com/shell/docs/quickstart) and work through the exercises.
 
-## Configure Your Environment
+## Configure Your Cloud Shell Environment
+
+Create two Cloud Shell Sessions and run the following commands:
+
+To avoid setting the compute zone for each command pick a zone from the list and set your config.
 
 ```
 gcloud compute zones list
