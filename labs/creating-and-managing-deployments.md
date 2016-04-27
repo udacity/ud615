@@ -1,6 +1,6 @@
 # Creating and Managing Deployments
 
-Deployments abstract away the low level details of managing Pods. Pods once created on node are tied to the lifetime of that node. When the node goes away so does the Pod. ReplicaSets can be used to ensure one or more replicas of a Pods are always running, even when nodes fail.
+Deployments abstract away the low level details of managing Pods. Pods are tied to the lifetime of that node. When the node goes away so does the Pod. ReplicaSets can be used to ensure one or more replicas of a Pods are always running, even when nodes fail.
 
 Deployments sit on top of ReplicaSets and add the ability to define how updates to Pods should be rolled out.
 
