@@ -72,11 +72,15 @@ kubectl scale deployments hello --replicas=3
 ```
 
 ```
-kubectl describe deployments
+kubectl describe deployments hello
 ```
 
 ```
 kubectl get pods
+```
+
+```
+kubectl get replicasets
 ```
 
 ## Exercise: Scaling Deployments
