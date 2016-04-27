@@ -26,7 +26,9 @@ In this section you will create a Google Compute Engine (GCE) account. GCE will 
   * [Create a GCE Account](labs/create-gce-account.md)
   * [Enable and explore Cloud Shell](labs/enable-and-explore-cloud-shell.md)
 
-## Clone this Repository
+### Clone this Repository
+
+Login into your Cloud Shell environment and clone this repository.
 
 ```
 git clone https://github.com/kelseyhightower/craft-kubernetes-workshop.git
