@@ -87,6 +87,10 @@ View the list of endpoints on the `monolith` service:
 kubectl describe services monolith
 ```
 
+### Quiz
+
+* How many endpoints does the `monolith` service have?
+
 ## Exercise: Interact with the Monolith Service Remotely
 
 ### Hints
