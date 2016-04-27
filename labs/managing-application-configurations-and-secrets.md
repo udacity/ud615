@@ -23,7 +23,7 @@ kubectl create secret generic tls-certs --from-file=tls/
 Examine the `tls-certs` secret:
 
 ```
-kubectl describe secrets certs
+kubectl describe secrets tls-certs
 ```
 
 ### Quiz
