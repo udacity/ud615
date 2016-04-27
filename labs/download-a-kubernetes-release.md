@@ -1,6 +1,6 @@
 # Download a Kubernetes Release
 
-Offical Kubernetes releases are hosted on GitHub. We are going to down load a copy of the official relase from Google Cloud Storage hosted in the EU for performance.
+Offical Kubernetes releases are hosted on GitHub. We are going to download a copy of the official release from Google Cloud Storage hosted in the EU for performance.
 
 ```
 wget https://storage.googleapis.com/craft-conf/kubernetes.tar.gz
