@@ -21,6 +21,10 @@ kubectl create -f deployments/auth.yaml
 ```
 
 ```
+kubectl describe deployments auth
+```
+
+```
 kubectl create -f services/auth.yaml
 ```
 
@@ -28,6 +32,10 @@ kubectl create -f services/auth.yaml
 
 ```
 kubectl create -f deployments/hello.yaml
+```
+
+```
+kubectl describe deployments hello
 ```
 
 ```
@@ -48,3 +56,43 @@ kubectl create -f deployments/frontend.yaml
 ```
 kubectl create -f services/frontend.yaml
 ```
+
+## Tutorial: Scaling Deployments
+
+Behind the scenes Deployments manage ReplicaSets. Each deployment is mapped to one active ReplicaSet. Use the `kubectl get replicasets` command to view the current set of replicas.
+
+```
+kubectl get replicasets
+```
+
+ReplicaSets are scaled through the Deployment for each service and can be scaled independently. Use the `kubectl scale` command to scale the hello deployment:
+
+```
+kubectl scale deployments hello --replicas=3
+```
+
+```
+kubectl describe deployments
+```
+
+```
+kubectl get pods
+```
+
+## Exercise: Scaling Deployments
+
+In this exercise you will scale the `frontend` deployment using an existing deployment configuration file.
+
+### Hints
+
+```
+vim deployments/frontend.yaml
+```
+
+```
+kubectl apply -f deployments/frontend.yaml
+```
+
+## Summary
+
+Deployments are the preferred way to manage application deployments. You learned how to create, expose and scale deployments.
