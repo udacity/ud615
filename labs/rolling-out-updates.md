@@ -33,6 +33,10 @@ kubectl describe deployments auth
 kubectl get replicasets
 ```
 
+```
+kubectl rollout history deployment auth
+```
+
 ## Tutorial: Pause and Resume an Active Rollout
 
 ```
