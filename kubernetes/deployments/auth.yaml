@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: "kelseyhightower/auth:2.0.0"
+          image: "kelseyhightower/auth:1.0.0"
           ports:
             - name: http
               containerPort: 80
