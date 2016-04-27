@@ -61,7 +61,7 @@ kubectl describe services monolith
 * How many endpoints does the `monolith` service have?
 * What labels must a Pod have to be picked up by the `monolith` service?
 
-## Exercise: Add the Missing Label
+## Tutorial: Add Labels to Pods
 
 Currently the `monolith` service does not have any endpoints. One way to troubleshoot an issue like this is to use the `kubectl get pods` command with a label query.
 
@@ -73,13 +73,15 @@ kubectl get pods -l "app=monolith"
 kubectl get pods -l "app=monolith,secure=enabled"
 ```
 
-Use the `kubectl label` command to add the missing label.
+> Notice this label query does not print any results
 
-### Hints
+Use the `kubectl label` command to add the missing `secure=enabled` label to the `secure-monolith` Pod.
 
 ```
-kubectl label pods secure-monolith '<key>=<value>'
+kubectl label pods secure-monolith 'secure=enabled'
 ```
+
+View the list of endpoints on the `monolith` service:
 
 ```
 kubectl describe services monolith
@@ -97,7 +99,7 @@ gcloud compute instances list
 curl -k https://<EXTERNAL_IP>:31000
 ```
 
-## Exercise: Remove the Required Label
+## Tutorial: Remove Labels from Pods
 
 In this exercise you will observe what happens when a required label is removed from a Pod.
 
