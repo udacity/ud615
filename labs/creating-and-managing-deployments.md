@@ -97,6 +97,18 @@ vim deployments/frontend.yaml
 kubectl apply -f deployments/frontend.yaml
 ```
 
+## Exercise: Interact with the Frontend Service
+
+### Hints
+
+```
+kubectl get services frontend
+```
+
+```
+curl -k https://<EXTERNAL-IP>
+```
+
 ## Summary
 
 Deployments are the preferred way to manage application deployments. You learned how to create, expose and scale deployments.
