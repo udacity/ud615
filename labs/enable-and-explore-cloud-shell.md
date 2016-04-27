@@ -5,3 +5,13 @@
 ## Explore Google Cloud Shell
 
 Visit the Google Cloud Shell [getting started guide](https://cloud.google.com/shell/docs/quickstart) and work through the exercises.
+
+## Configure Your Environment
+
+```
+gcloud compute zones list
+```
+
+```
+gcloud config set compute/zone europe-west1-d
+```
