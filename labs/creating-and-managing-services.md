@@ -105,11 +105,11 @@ In this exercise you will observe what happens when a required label is removed 
 
 Use the `kubectl label` command to remove the `secure` label from the `secure-monolith` Pod.
 
-### Hints
-
 ```
 kubectl label pods secure-monolith secure-
 ```
+
+View the list of endpoints on the `monolith` service:
 
 ```
 kubectl describe services monolith
@@ -120,3 +120,5 @@ kubectl describe services monolith
 * How many endpoints does the `monolith` service have?
 
 ## Summary
+
+In this lab you learned how to expose Pods using services and labels.
