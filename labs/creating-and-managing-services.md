@@ -59,11 +59,21 @@ kubectl describe services monolith
 ### Quiz
 
 * How many endpoints does the `monolith` service have?
-* What labels must a Pod have to be picked up by the `monolith` service?  
+* What labels must a Pod have to be picked up by the `monolith` service?
 
 ## Exercise: Add the Missing Label
 
-Currently the `monolith` service does not have any endpoints. Use the `kubectl label` command to fix the problem.
+Currently the `monolith` service does not have any endpoints. One way to troubleshoot an issue like this is to use the `kubectl get pods` command with a label query.
+
+```
+kubectl get pods -l "app=monolith"
+```
+
+```
+kubectl get pods -l "app=monolith,secure=enabled"
+```
+
+Use the `kubectl label` command to add the missing label.
 
 ### Hints
 
