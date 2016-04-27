@@ -6,7 +6,7 @@ In this workshop you will learn how to:
 * Provision a complete Kubernetes using [Google Container Engine](https://cloud.google.com/container-engine)
 * Deploy and manage Docker containers using kubectl
 
-Kubernetes Version: 1.2.3
+Kubernetes Version: 1.2.2
 
 ## Google Compute Engine (GCE)
 
@@ -25,6 +25,12 @@ In this section you will create a Google Compute Engine (GCE) account. GCE will 
 
   * [Create a GCE Account](labs/create-gce-account.md)
   * [Enable and explore Cloud Shell](labs/enable-and-explore-cloud-shell.md)
+
+## Clone this Repository
+
+```
+git clone https://github.com/kelseyhightower/craft-kubernetes-workshop.git
+```
 
 ## Provision a Kubernetes cluster from scratch
 
