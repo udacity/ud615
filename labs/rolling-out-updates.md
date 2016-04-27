@@ -2,9 +2,9 @@
 
 Kubernetes makes it easy to rollout updates to your applications using the builtin rolling update mechanism. In this lab you will learn how to:
 
-* modify deployments to tigger rolling updates
-* pause and resume an active rolling update
-* rollback a deployment to a previous revision
+* Modify deployments to tigger rolling updates
+* Pause and resume an active rolling update
+* Rollback a deployment to a previous revision
 
 ## Tutorial: Rollout a new version of the Auth service
 
@@ -15,10 +15,11 @@ kubectl rollout history deployment auth
 Modify the auth deployment image:
 
 ```
-spec:
-  containers:
-    - name: auth
-      image: "kelseyhightower/auth:2.0.0"
+vim deployments/auth.yaml
+```
+
+```
+image: "kelseyhightower/auth:2.0.0"
 ```
 
 ```
@@ -46,10 +47,11 @@ kubectl rollout history deployment hello
 Modify the hello deployment image:
 
 ```
-spec:
-  containers:
-    - name: auth
-      image: "kelseyhightower/hello:2.0.0"
+vim deployments/hello.yaml
+```
+
+```
+image: "kelseyhightower/hello:2.0.0"
 ```
 
 ```
