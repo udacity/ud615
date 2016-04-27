@@ -2,7 +2,7 @@
 
 Services provide stable endpoints for Pods based on a set of labels.
 
-In this lab you will create the `monolith` service. You learn how to:
+In this lab you will create the `monolith` service and "expose" the `secure-monolith` Pod externally. You will learn how to:
 
 * Create a service
 * Use label selectors to expose a limited set of Pods externally
@@ -68,7 +68,7 @@ Currently the `monolith` service does not have any endpoints. Use the `kubectl l
 ### Hints
 
 ```
-kubectl label pods <pod-name> '<key>=<value>'
+kubectl label pods secure-monolith '<key>=<value>'
 ```
 
 ```
