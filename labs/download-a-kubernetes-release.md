@@ -1,9 +1,9 @@
 # Download a Kubernetes Release
 
-Offical Kubernetes releases are hosted on GitHub.
+Offical Kubernetes releases are hosted on GitHub. We are going to down load a copy of the official relase from Google Cloud Storage hosted in the EU for performance.
 
 ```
-wget https://github.com/kubernetes/kubernetes/releases/download/v1.2.3/kubernetes.tar.gz
+wget https://storage.googleapis.com/craft-conf/kubernetes.tar.gz
 tar -xvf kubernetes.tar.gz
 tar -xvf kubernetes/server/kubernetes-server-linux-amd64.tar.gz
 sudo cp kubernetes/server/bin/hyperkube /usr/local/bin/
