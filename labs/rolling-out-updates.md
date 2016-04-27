@@ -30,7 +30,7 @@ kubectl describe deployments auth
 ```
 
 ```
-kubectl get pods --watch
+kubectl get replicasets
 ```
 
 ## Tutorial: Pause and Resume an Active Rollout
