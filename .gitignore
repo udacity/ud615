@@ -22,3 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+*.pem
+
+# OSX specific
+.DS_Store
+
