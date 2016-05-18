@@ -18,7 +18,7 @@ spec:
         - name: "tls-certs"
           mountPath: "/etc/tls"
     - name: monolith
-      image: "kelseyhightower/monolith:1.0.0"
+      image: "udacity/example-monolith:1.0.0"
       ports:
         - name: http
           containerPort: 80
