@@ -1,7 +1,6 @@
 # UD615: Scalable Microservices with Kubernetes
 
-This is the code for [Scalable Microservices with Kubernetes](https://www.udacity.com/course/scalable-microservices-with-kubernetes--ud615)
-In this course you will learn how to:
+This is the code for [Scalable Microservices with Kubernetes](https://www.udacity.com/course/scalable-microservices-with-kubernetes--ud615).  In this course you will learn how to:
 
 * Provision a complete Kubernetes using [Google Container Engine](https://cloud.google.com/container-engine)
 * Deploy and manage Docker containers using kubectl
