@@ -10,8 +10,8 @@ import (
 	"syscall"
 
 	"github.com/braintree/manners"
-	"github.com/kelseyhightower/app/handlers"
-	"github.com/kelseyhightower/app/health"
+	"github.com/udacity/ud615/app/handlers"
+	"github.com/udacity/ud615/app/health"
 )
 
 const version = "1.0.0"

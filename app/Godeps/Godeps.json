@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/kelseyhightower/app",
+	"ImportPath": "github.com/udacity/ud615/app",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v62",
 	"Deps": []
