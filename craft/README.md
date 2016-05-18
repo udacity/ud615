@@ -1,3 +1,5 @@
+# UD615: Scalable Microservices with Kubernetes
+
 In this course you will learn how to:
 
 * Provision a complete Kubernetes using [Google Container Engine](https://cloud.google.com/container-engine)
@@ -5,7 +7,7 @@ In this course you will learn how to:
 
 Kubernetes Version: 1.2.2
 
-### Course Description
+## Course Description
 
 Kubernetes is all about applications and in this course you will utilize the Kubernetes API to deploy, manage, and upgrade applications. In this part of the workshop you will use an example application called "app" to complete the labs.
 
