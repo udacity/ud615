@@ -16,7 +16,7 @@ App is an example [12 Factor application](http://12factor.net/) that we'll be us
 * [udacity/example-monolith](https://hub.docker.com/r/udacity/example-monolith) - Monolith includes auth and hello services.
 * [udacity/example-auth](https://hub.docker.com/r/udacity/example-auth) - Auth microservice. Generates JWT tokens for authenticated users.
 * [udacity/example-hello](https://hub.docker.com/r/udacity/example-hello) - Hello microservice. Greets authenticated users.
-* [ngnix](https://hub.docker.com/_/nginx) - Frontend to the auth and hello services.
+* [nginx](https://hub.docker.com/_/nginx) - Frontend to the auth and hello services.
 
 ## Links
 
