@@ -28,15 +28,15 @@ $ ./server
 
 ```
 2016/04/15 06:34:12 Starting server...
-2016/04/15 06:34:12 HTTP service listening on 0.0.0.0:5000
-2016/04/15 06:34:12 Health service listening on 0.0.0.0:5001
+2016/04/15 06:34:12 HTTP service listening on 0.0.0.0:80
+2016/04/15 06:34:12 Health service listening on 0.0.0.0:81
 2016/04/15 06:34:12 Started successfully.
 ```
 
 ### Test with cURL
 
 ```
-$ curl --cacert ./ca.pem -u user https://127.0.0.1:5000/login
+$ curl --cacert ./ca.pem -u user https://127.0.0.1:80/login
 ```
 ```
 Enter host password for user 'user':
