@@ -1,0 +1,7 @@
+[v3_ca]
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth, clientAuth
+basicConstraints = critical, CA:FALSE
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+subjectAltName = IP:127.0.0.1, DNS: localhost, DNS: *.example.com
