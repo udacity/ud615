@@ -39,11 +39,12 @@ func (h *loginHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	token := jwt.New(jwt.SigningMethodHS256)
-	token.Claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
-	token.Claims["iss"] = "auth.service"
-	token.Claims["iat"] = time.Now().Unix()
-	token.Claims["email"] = user.Email
-	token.Claims["sub"] = user.Username
+	claims := token.Claims.(jwt.MapClaims)
+	claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
+	claims["iss"] = "auth.service"
+	claims["iat"] = time.Now().Unix()
+	claims["email"] = user.Email
+	claims["sub"] = user.Username
 
 	tokenString, err := token.SignedString([]byte(h.secret))
 	if err != nil {
