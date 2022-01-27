@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: monolith
-      image: udacity/example-monolith:1.0.0
+      image:  kelseyhightower/monolith:1.0.0
       args:
         - "-http=0.0.0.0:80"
         - "-health=0.0.0.0:81"
